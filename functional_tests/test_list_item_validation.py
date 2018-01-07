@@ -18,12 +18,12 @@ class ItemValidiationTest(FunctionalTest):
 
         self.browser.find_element_by_id('id_new_item').send_keys(Keys.ENTER)
 
-        self.fail('Finish this test!')
         self.wait_for(lambda: self.assertEqual(self.browser.find_element_by_css_selector('.has-error').text, "You can't have an empty list item!"))
 
         inputbox.send_keys('Make tea!')
         inputbox.send_keys(Keys.ENTER)
 
         self.wait_for_row_in_list_table('2: Make tea!')
+
 
 
